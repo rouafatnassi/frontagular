@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Liste des formations</h2>
+    <button class="btn btn-success" (click)="navigateToAddPage()">Ajouter Formation</button>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Titre</th>
+          <th scope="col">Description</th>
+          <th scope="col">Charge Horaires</th>
+          <th scope="col">Programme</th>
+          <th scope="col">Niveau de Difficulté</th>
+          <th scope="col">Catégories</th>
+         
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let formation of formations">
+          <td>{{ formation.id }}</td>
+          <td>{{ formation.Titre }}</td>
+          <td>{{ formation.Description }}</td>
+          <td>{{ formation.ChargeHoraires }}</td>
+          <td>{{ formation.Programme }}</td>
+          <td>{{ formation.NiveauDifficulte }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let category of formation.categories">{{ category }}</li>
+            </ul>
+          </td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

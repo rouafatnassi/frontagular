@@ -1,0 +1,30 @@
+
+<div class="container mt-4">
+    <h2>Sessions de Formation</h2>
+    <div *ngIf="lesSessions && lesSessions.length > 0; else noSessions">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID Session</th>
+            <th>ID Formation</th>
+            <th>Date Début</th>
+            <th>Date Fin</th>
+            <!-- Add more headers if needed -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let session of lesSessions">
+            <td>{{ session.IDSession }}</td>
+            <td>{{ session.IDFormation }}</td>
+            <td>{{ session.DateDebut | date: 'short' }}</td>
+            <td>{{ session.DateFin | date: 'short' }}</td>
+            <!-- Add more columns based on your SessionFormation model -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <ng-template #noSessions>
+      <p>Aucune session de formation disponible.</p>
+    </ng-template>
+  </div>
+  

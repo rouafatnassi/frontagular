@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Ajouter une nouvelle formation</h2>
+    <form #formationForm="ngForm" (ngSubmit)="createFormation(formationForm)">
+      <div class="form-group">
+        <label for="titre">Titre:</label>
+        <input type="text" class="form-control" id="titre" name="titre" [(ngModel)]="newFormation.Titre" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description" [(ngModel)]="newFormation.Description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="programme">image url:</label>
+        <input type="text" class="form-control" id="image" name="image" [(ngModel)]="newFormation.Image" required>
+      </div>
+      <div class="form-group">
+        <label for="chargeHoraires">Charge Horaires:</label>
+        <input type="number" class="form-control" id="chargeHoraires" name="chargeHoraires" [(ngModel)]="newFormation.ChargeHoraires" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="programme">Programme:</label>
+        <input type="text" class="form-control" id="programme" name="programme" [(ngModel)]="newFormation.Programme" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="niveauDifficulte">Niveau de Difficulté:</label>
+        <input type="text" class="form-control" id="niveauDifficulte" name="niveauDifficulte" [(ngModel)]="newFormation.NiveauDifficulte" required>
+      </div>
+  
+      <div class="form-group">
+        <label for="categories">Catégories (comma-separated):</label>
+        <input type="text" class="form-control" id="categories" name="categories" [(ngModel)]="newFormation.categories" required>
+      </div>
+  
+     
+  
+      <button type="submit" class="btn btn-primary">Ajouter</button>
+    </form>
+  </div>
+  

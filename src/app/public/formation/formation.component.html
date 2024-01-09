@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation Page</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+              <a class="navbar-brand" href="#">Site</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/lesformation">Formations</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/logincondidat">Espace candidat</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" routerLink="/loginformateur">Espace Formateur</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div class="container mt-4">
+      <h2>Liste des Formations</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let formation of lesFormations">
+          <div class="card">
+            <img src="{{ formation.Image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ formation.Titre }}</h5>
+              <p class="card-text">{{ formation.Description }}</p>
+              <p class="card-text">{{ formation.NiveauDifficulte }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

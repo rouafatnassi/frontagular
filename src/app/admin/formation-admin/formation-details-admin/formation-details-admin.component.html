@@ -1,0 +1,29 @@
+<!-- formation-details-admin.component.html -->
+
+<ng-container *ngIf="allFormations.length && allSessionsFormations.length">
+    <div *ngFor="let formation of allFormations" class="mb-4 p-4 bg-light rounded">
+      <h3 class="mb-3 text-primary">{{ formation.Titre }}</h3>
+      <p class="text-muted">Description: {{ formation.Description }}</p>
+  
+      <div class="mt-3">
+        <h4 class="mb-3 text-success">Formateurs:</h4>
+        <ul class="list-group">
+          <li *ngFor="let formateur of getFormateursAndCandidats(formation.id)?.formateurs" class="list-group-item list-group-item-success">
+            {{ formateur }}
+          </li>
+        </ul>
+      </div>
+  
+      <div class="mt-3">
+        <h4 class="mb-3 text-info">Candidats:</h4>
+        <ul class="list-group">
+          <li *ngFor="let candidat of getFormateursAndCandidats(formation.id)?.candidats" class="list-group-item list-group-item-info">
+            {{ candidat }}
+          </li>
+        </ul>
+      </div>
+  
+      <hr class="mt-4 border-secondary">
+    </div>
+  </ng-container>
+  

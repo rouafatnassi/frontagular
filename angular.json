@@ -25,9 +25,12 @@
               "src/assets"
             ],
             "styles": [
+              "C:/angulartp/formation/node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "C:/angulartp/formation/node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
