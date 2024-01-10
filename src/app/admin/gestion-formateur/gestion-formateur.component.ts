@@ -32,6 +32,6 @@ export class GestionFormateurComponent implements OnInit , OnDestroy{
   deleteFormateur=(index:number)=>{
     if(window.confirm("Etes-vous sure de vouloir supprimer le formatuer")){
     this.formateurService.deleteFormateur(index);}
-    this.router.navigate(['/adminformateur']);
+  this.ngOnInit;
   }
 }

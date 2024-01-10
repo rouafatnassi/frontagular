@@ -11,6 +11,10 @@ import { GestionCandidatComponent } from './admin/gestion-candidat/gestion-candi
 import { FormationAdminComponent } from './admin/formation-admin/formation-admin.component';
 import { AddFormationComponent } from './admin/formation-admin/add-formation/add-formation.component';
 import { FormationDetailsAdminComponent } from './admin/formation-admin/formation-details-admin/formation-details-admin.component';
+import { HomeComponent } from './public/home/home.component';
+import { EditFormateurComponent } from './admin/gestion-formateur/edit-formateur/edit-formateur.component';
+import { SessioncondidatComponent } from './condidat/sessioncondidat/sessioncondidat.component';
+import { CreateSignComponent } from './condidat/create-sign/create-sign.component';
 
 const routes: Routes = [
   {path:'lesformation',component:FormationComponent},
@@ -24,6 +28,14 @@ const routes: Routes = [
 {path:'adminformation', component:FormationAdminComponent},
 {path:'add-formation', component:AddFormationComponent},
 {path:'formation-details', component:FormationDetailsAdminComponent},
+{path:'home', component:HomeComponent},
+{ path: 'edit/:id', component: EditFormateurComponent },
+{ path: 'formationCandidat/:idCandidat', component: SessioncondidatComponent },
+{ path: 'candidatCreateAcc', component: CreateSignComponent }
+
+
+
+
 
 
 ];

@@ -1,0 +1,15 @@
+.navbar {
+    padding: 1rem 0;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+  }
+  
+  .nav-link {
+    padding: 0.5rem 1rem;
+  }
+  
+  .container {
+    margin-top: 2rem;
+  }

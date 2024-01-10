@@ -1,6 +1,6 @@
 export interface SessionFormation {
     IDSession: number;
-    IDFormation: number;
+    id: number;
     DateDebut: string;
     DateFin: string;
     formateurs: number[];

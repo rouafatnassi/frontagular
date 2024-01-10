@@ -35,7 +35,7 @@ export class SessionFormationService {
   updateSessionFormation(sessionFormation: SessionFormation): void {
     this.http.put<SessionFormation>(`${this.apiUrl}/${sessionFormation.IDSession}`,
     {
-      IDFormation:sessionFormation.IDFormation,
+      IDFormation:sessionFormation.id,
       DateDebut: sessionFormation.DateDebut,
       DateFin: sessionFormation.DateFin,
       formateurs:sessionFormation.formateurs,

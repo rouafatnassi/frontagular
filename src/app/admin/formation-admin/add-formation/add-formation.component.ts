@@ -26,8 +26,7 @@ export class AddFormationComponent  {
   constructor(private formationService: FormationService,private router: Router) { 
     
   }
- // TypeScript function in your component
-// TypeScript function in your component
+ 
 createFormation(form: NgForm): void {
   if (form.invalid) {
     // Handle invalid form data (if needed)

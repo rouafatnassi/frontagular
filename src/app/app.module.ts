@@ -16,7 +16,11 @@ import { FormationAdminComponent } from './admin/formation-admin/formation-admin
 import { AddFormationComponent } from './admin/formation-admin/add-formation/add-formation.component';
 import { FormsModule } from '@angular/forms';
 import { FormationDetailsAdminComponent } from './admin/formation-admin/formation-details-admin/formation-details-admin.component';
-
+import { EditFormateurComponent } from './admin/gestion-formateur/edit-formateur/edit-formateur.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditCandidatComponent } from './admin/gestion-candidat/edit-candidat/edit-candidat.component';
+import { SessioncondidatComponent } from './condidat/sessioncondidat/sessioncondidat.component';
+import { CreateSignComponent } from './condidat/create-sign/create-sign.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,14 +36,18 @@ import { FormationDetailsAdminComponent } from './admin/formation-admin/formatio
     GestionCandidatComponent,
     FormationAdminComponent,
     AddFormationComponent,
-    FormationDetailsAdminComponent
+    FormationDetailsAdminComponent,
+    EditFormateurComponent,
+    EditCandidatComponent,
+    SessioncondidatComponent,
+    CreateSignComponent
     
     
   ],
   imports: [FormsModule,
     BrowserModule,
     AppRoutingModule,
-   
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],

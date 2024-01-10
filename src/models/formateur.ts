@@ -1,6 +1,6 @@
 // models/formateur.model.ts
 export interface Formateur {
-    IDFormateur: number;
+    id: number;
     Nom: string;
     Prenom: string;
     Email: string;

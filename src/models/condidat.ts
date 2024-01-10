@@ -1,5 +1,5 @@
 export interface Condidat {
-    IDCandidat: number;
+    id: number;
     Nom: string;
     Prenom: string;
     Email:string;

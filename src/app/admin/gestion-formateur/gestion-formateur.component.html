@@ -22,12 +22,12 @@
           </thead>
           <tbody>
             <tr *ngFor=" let formateur of formateurs" >
-            <td>{{formateur.IDFormateur }}</td>
+            <td>{{formateur.id }}</td>
             <td >{{formateur.Nom| uppercase}}</td>
             <td >{{formateur.Email}}</td>
             <td >{{formateur.Telephone}}</td>
-            <td><button class='btn btn-primary' [routerLink]="['/','',formateur.IDFormateur]">Editer</button></td>
-            <td><button class='btn btn-danger' (click)="deleteFormateur(formateur.IDFormateur)">Supprimer  </button></td>
+            <td><button class='btn btn-primary' [routerLink]="['/edit', formateur.id]">Editer</button></td>
+            <td><button class='btn btn-danger' (click)="deleteFormateur(formateur.id)">Supprimer  </button></td>
         </tr>
         </tbody>
         </table>

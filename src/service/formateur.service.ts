@@ -23,12 +23,14 @@ export class FormateurService {
       tap((formateur) => console.log('Received formateurs:', formateur))
     );
   }
-  getFormateurById=(id: number): Formateur| undefined=>{
-    return this.formateur.find(formateur=>formateur.IDFormateur==id)
+  getFormateurById(id: number): Observable<Formateur | undefined> {
+    return this.http.get<Formateur[]>(this.apiUrl).pipe(
+      map((formateurs) => formateurs.find((formateur) => formateur.id === id))
+    );
   }
 
   getlastid=()=>{
-    return this.formateur[this.formateur.length - 1].IDFormateur;
+    return this.formateur[this.formateur.length - 1].id;
   }
 
   createFormateur=(formateur: Formateur): void=> {
@@ -37,12 +39,34 @@ export class FormateurService {
   }
 
 
+editFormateur(formateur : Formateur):void{
+    this.http.put<Formateur>(`${this.apiUrl}/${formateur.id}`,
+    
+    {
+    Nom: formateur.Nom,
+    Prenom: formateur.Prenom,
+    Email: formateur.Email,
+    Telephone: formateur.Telephone,
+    NumeroCarteIdentite: formateur.NumeroCarteIdentite,
+    MotDePasse: formateur.MotDePasse,
+    specialites: formateur.specialites,
+    },
+    this.options ).subscribe(
+      formateur => {
+        this.formateur = this.formateur.map(
+              fm=>fm.id===formateur.id?formateur:fm
+            )
+        this.formateurArrayEdited.next([...this.formateur])
+      }
+    )
+  }
+
   deleteFormateur=(id: number): void=> {
     this.http.delete(`${this.apiUrl}/${id}`).subscribe(()=>
     {this.formateur=this.formateur.filter(
-     cd=>cd.IDFormateur!==id
+     cd=>cd.id!==id
      )
-    this.formateurArrayEdited.next([...this.formateur])})
+    this.formateurArrayEdited.next([...this.formateur]),console.log("supprimé")})
   }
 
   login(email: string, password: string): Observable<any> {
